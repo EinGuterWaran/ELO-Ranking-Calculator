@@ -1,5 +1,7 @@
 import pandas as pd
 import csv
+from operator import itemgetter
+
 
 def expected_value(own_points, opponent_points):
     return 1 / (1 + 10**((opponent_points - own_points) / 400))
@@ -31,37 +33,72 @@ for index, row in df.iterrows():
     player2 = row['player2']
     player1p = row['p1_points']
     player2p = row['p2_points']
+    print("Match #" + str(index) + " - " + row['date'] + " - " + player1 +
+          " vs. " + player2)
     # Add new players
     if player1 not in players:
-        players[player1] = START_ELO
-        print("New player "+player1+" with "+str(START_ELO)+" points.")
+        players[player1] = {
+            "name": player1,
+            "points": START_ELO,
+            "wins": 0,
+            "losses": 0,
+            "ties": 0
+        }
+        print("New player " + player1 + " with " + str(START_ELO) + " points.")
     if player2 not in players:
-        players[player2] = START_ELO
-        print("New player "+player2+" with "+str(START_ELO)+" points.")
-
-    player1_elo = players[player1]
-    player2_elo = players[player2]
+        players[player2] = {
+            "name": player2,
+            "points": START_ELO,
+            "wins": 0,
+            "losses": 0,
+            "ties": 0
+        }
+        print("New player " + player2 + " with " + str(START_ELO) + " points.")
+    player1_elo = players[player1]["points"]
+    player2_elo = players[player2]["points"]
     s_1, s_2 = 0, 0
     if player1p > player2p:
         s_1, s_2 = 1, 0
-        print(player1 +" ("+str(player1_elo)+") wins against "+player2+" ("+str(player2_elo)+").")
+        players[player1]["wins"] += 1
+        players[player2]["losses"] += 1
+        print(player1 + " (" + str(player1_elo) + ") wins against " + player2 +
+              " (" + str(player2_elo) + ").")
     elif player2p > player1p:
         s_2, s_1 = 1, 0
-        print(player2 +" ("+str(player2_elo)+") wins against "+player1+" ("+str(player1_elo)+").")
+        players[player2]["wins"] += 1
+        players[player1]["losses"] += 1
+        print(player2 + " (" + str(player2_elo) + ") wins against " + player1 +
+              " (" + str(player1_elo) + ").")
     else:
         s_1, s_2 = 0.5, 0.5
-    players[player1] = new_ELO_points(player1_elo, K, s_1,
-                                      expected_value(player1_elo, player2_elo))
-    players[player2] = new_ELO_points(player2_elo, K, s_2,
-                                      expected_value(player2_elo, player1_elo))
-    print("New Points: "+player1+" has "+str(players[player1])+" and "+player2+" "+str(players[player2])+" points.\n")
-players = sorted(players.items(), key=lambda x: x[1])
+        players[player1]["ties"] += 1
+        players[player2]["ties"] += 1
+    players[player1]["points"] = new_ELO_points(
+        player1_elo, K, s_1, expected_value(player1_elo, player2_elo))
+    players[player2]["points"] = new_ELO_points(
+        player2_elo, K, s_2, expected_value(player2_elo, player1_elo))
+    print("New Points: " + player1 + " has " +
+          str(players[player1]["points"]) + " and " + player2 + " " +
+          str(players[player2]["points"]) + " points.\n")
+players = sorted(players.values(), key=itemgetter("points"))
+print("Rank - Name - ELO points - Wins - Ties - Losses")
 for x in range(1, len(players) + 1):
-    print("#"+str(x)+" "+players[len(players) - x][0]+ " - " + str(players[len(players) - x][1]))
+    act_player = players[len(players) - x]
+    print("#" + str(x) + " " + act_player["name"] + " - " +
+          str(act_player["points"]) + " - " + str(act_player["wins"]) + " - " +
+          str(act_player["ties"]) + " - " + str(act_player["losses"]))
 
 with open('output/ranking.csv', 'w', newline='') as csvfile:
-    fieldnames = ['rank', 'name', 'elo']
+    fieldnames = ['rank', 'name', 'elo', 'wins', 'losses', 'ties']
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
     writer.writeheader()
     for x in range(1, len(players) + 1):
-      writer.writerow({'rank': x, 'name': players[len(players) - x][0], 'elo': str(players[len(players) - x][1])})
+        act_player = players[len(players) - x]
+        writer.writerow({
+            'rank': x,
+            'name': act_player["name"],
+            'elo': str(act_player["points"]),
+            'wins': act_player["wins"],
+            'losses': act_player["losses"],
+            'ties': act_player["ties"]
+        })
