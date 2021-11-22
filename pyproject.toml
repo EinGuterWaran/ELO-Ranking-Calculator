@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "repl_python3_Elo-Calculator"
+name = "python3_Elo-Ranking-Calculator"
 version = "0.1.0"
 description = ""
-authors = ["EinGuterWaran <<>>"]
+authors = ["EinGuterWaran <<Janu@Lingeswaran.com>>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
