@@ -1,5 +1,4 @@
-import csv
-with open('input/matches.csv', newline='') as csvfile:
-  spamreader = csv.reader(csvfile, delimiter=',', quotechar='|')
-  for row in spamreader:
-    print(', '.join(row))
+import pandas as pd
+
+df = pd.read_csv('input/matches.csv', header=[0])
+print(df)
