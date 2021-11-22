@@ -1,4 +1,4 @@
-# Elo-Ranking-Calculator
+# ELO-Ranking-Calculator
 Calculates an ELO ranking from a CSV file with matches
 
 ## How to use this tool
