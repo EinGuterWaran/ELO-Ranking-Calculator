@@ -13,6 +13,7 @@ Header: date,player1,player2,p1_points,p2_points
 - p1_points, p2_points: The points/goals/... the players got in this match. If there is nothing like this in your use case just give the winner more points 
 and if it's a tie give them both the same amount of points. The difference does not matter for the ELO.
 
-### Example input files
-You find two example files in the input folder. One are German battle rap matches of BMCL from "Rap am Mittwoch", 
-[which can be found on Wikipedia](https://de.wikipedia.org/w/index.php?title=Rap_am_Mittwoch#Begegnungen_der_BMCL) and the other are fantasy footbal games I made up.
+### Example input files + randomly generated input file
+You find three example files in the input folder. One are German battle rap matches of BMCL from "Rap am Mittwoch", 
+[which can be found on Wikipedia](https://de.wikipedia.org/w/index.php?title=Rap_am_Mittwoch#Begegnungen_der_BMCL) and one are fantasy football games I made up.  
+The last one are 200000 randomly generated matches between 200 randomly generated players. The tool I wrote to generate them can also be found in this repository (*random_input_generator.py*).
