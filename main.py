@@ -109,7 +109,7 @@ def Elo_Ranking_Calculator(start_elo, k, filename):
 def example():
   START_ELO = 1000
   K = 40
-  Elo_Ranking_Calculator(START_ELO, K, "ram_matches")
+  Elo_Ranking_Calculator(START_ELO, K, "RAM_BMCL")
 
 
 def main():
