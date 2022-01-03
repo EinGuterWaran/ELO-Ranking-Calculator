@@ -1,49 +1,49 @@
-rank,name,elo,wins,losses,ties
-1,Ssynic,1290,5,0,0
-2,Buy Some,1240,2,0,0
-3,RV,1240,2,0,0
-4,Gozpel,1240,2,0,0
-5,Yarambo,1239,2,0,0
-6,Besser,1239,2,0,0
-7,Mighty P.,1239,2,0,0
-8,Fresh Polakke,1238,2,0,0
-9,Petschino,1222,1,0,0
-10,Z,1221,1,0,0
-11,Jey Jey Glünderling,1220,1,0,0
-12,Mikz,1220,1,0,0
-13,Davie Jones,1220,2,1,0
-14,Takt32,1220,1,0,0
-15,Laas Unltd.,1220,1,0,0
-16,Finch Asozial,1219,1,0,0
-17,McTwist,1219,1,0,0
-18,Brian Damage,1219,1,0,0
-19,Tobi Nice,1217,2,1,0
-20,Mighty Mo,1217,2,1,0
-21,P-Zak,1201,1,1,0
-22,Notyzze,1200,1,1,0
-23,Battleboi Basti,1200,1,1,0
-24,Koozy,1199,1,1,0
-25,Merlin,1198,2,2,0
-26,Cashisclay,1183,0,1,0
-27,Drob Dynamic,1183,1,2,0
-28,Barracuda,1181,0,1,0
-29,Nedal Nib,1181,0,1,0
-30,Mars B,1181,0,1,0
-31,BDad,1181,0,1,0
-32,4Tune,1181,0,1,0
-33,Jizi,1180,0,1,0
-34,Georg Midas,1180,0,1,0
-35,Lyrico,1180,0,1,0
-36,Ali Affront,1180,0,1,0
-37,Le Nerd,1180,0,1,0
-38,Separate,1180,0,1,0
-39,Fatcap,1180,0,1,0
-40,Iron Basic,1179,0,1,0
-41,Doktor Dave,1178,0,1,0
-42,MC Maik,1162,1,3,0
-43,Gugo,1161,0,2,0
-44,Jack Dragon,1161,0,2,0
-45,Pille,1161,0,2,0
-46,Amah,1161,0,2,0
-47,Roni 87,1160,0,2,0
-48,Bong Teggy,1149,0,3,0
+rank,name,elo,wins,losses,ties,rating_of_100
+1,Ssynic,1290,5,0,0,52.25
+2,Buy Some,1240,2,0,0,51.25
+3,RV,1240,2,0,0,51.25
+4,Gozpel,1240,2,0,0,51.25
+5,Yarambo,1239,2,0,0,51.23
+6,Besser,1239,2,0,0,51.23
+7,Mighty P.,1239,2,0,0,51.23
+8,Fresh Polakke,1238,2,0,0,51.21
+9,Petschino,1222,1,0,0,50.89
+10,Z,1221,1,0,0,50.87
+11,Jey Jey Glünderling,1220,1,0,0,50.85
+12,Mikz,1220,1,0,0,50.85
+13,Davie Jones,1220,2,1,0,50.85
+14,Takt32,1220,1,0,0,50.85
+15,Laas Unltd.,1220,1,0,0,50.85
+16,Finch Asozial,1219,1,0,0,50.83
+17,McTwist,1219,1,0,0,50.83
+18,Brian Damage,1219,1,0,0,50.83
+19,Tobi Nice,1217,2,1,0,50.79
+20,Mighty Mo,1217,2,1,0,50.79
+21,P-Zak,1201,1,1,0,50.47
+22,Notyzze,1200,1,1,0,50.45
+23,Battleboi Basti,1200,1,1,0,50.45
+24,Koozy,1199,1,1,0,50.43
+25,Merlin,1198,2,2,0,50.41
+26,Cashisclay,1183,0,1,0,50.11
+27,Drob Dynamic,1183,1,2,0,50.11
+28,Barracuda,1181,0,1,0,50.07
+29,Nedal Nib,1181,0,1,0,50.07
+30,Mars B,1181,0,1,0,50.07
+31,BDad,1181,0,1,0,50.07
+32,4Tune,1181,0,1,0,50.07
+33,Jizi,1180,0,1,0,50.05
+34,Georg Midas,1180,0,1,0,50.05
+35,Lyrico,1180,0,1,0,50.05
+36,Ali Affront,1180,0,1,0,50.05
+37,Le Nerd,1180,0,1,0,50.05
+38,Separate,1180,0,1,0,50.05
+39,Fatcap,1180,0,1,0,50.05
+40,Iron Basic,1179,0,1,0,50.03
+41,Doktor Dave,1178,0,1,0,50.01
+42,MC Maik,1162,1,3,0,49.69
+43,Gugo,1161,0,2,0,49.67
+44,Jack Dragon,1161,0,2,0,49.67
+45,Pille,1161,0,2,0,49.67
+46,Amah,1161,0,2,0,49.67
+47,Roni 87,1160,0,2,0,49.65
+48,Bong Teggy,1149,0,3,0,49.43

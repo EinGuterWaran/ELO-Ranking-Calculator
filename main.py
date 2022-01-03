@@ -83,15 +83,15 @@ def Elo_Ranking_Calculator(start_elo, k, filename):
             str(players[player1]["points"]) + " and " + player2 + " " +
             str(players[player2]["points"]) + " points.\n")
   players = sorted(players.values(), key=itemgetter("points"))
-  print("Rank - Name - ELO points - Wins - Ties - Losses")
+  print("Rank - Name - ELO points - Wins - Ties - Losses - Rating (out of 100)")
   for x in range(1, len(players) + 1):
       act_player = players[len(players) - x]
       print("#" + str(x) + " " + act_player["name"] + " - " +
             str(act_player["points"]) + " - " + str(act_player["wins"]) + " - " +
-            str(act_player["ties"]) + " - " + str(act_player["losses"]))
+            str(act_player["ties"]) + " - " + str(act_player["losses"]) + " - " + str(round((0.020 * act_player["points"]) + (26.450),2)))
 
   with open('output/'+filename+'_ranking.csv', 'w', newline='') as csvfile:
-      fieldnames = ['rank', 'name', 'elo', 'wins', 'losses', 'ties']
+      fieldnames = ['rank', 'name', 'elo', 'wins', 'losses', 'ties', 'rating_of_100']
       writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
       writer.writeheader()
       for x in range(1, len(players) + 1):
@@ -102,12 +102,13 @@ def Elo_Ranking_Calculator(start_elo, k, filename):
               'elo': str(act_player["points"]),
               'wins': act_player["wins"],
               'losses': act_player["losses"],
-              'ties': act_player["ties"]
+              'ties': act_player["ties"],
+              'rating_of_100': round((0.020 * act_player["points"]) + (26.450),2)
           })
 
 
 def example():
-  START_ELO = 1000
+  START_ELO = 1200
   K = 40
   Elo_Ranking_Calculator(START_ELO, K, "RAM_BMCL")
 
@@ -121,7 +122,7 @@ def main():
     example()
   else:
     own_filename = input("Enter the name of your input file in input folder (without the '.csv' ending)!\n")
-    own_elo = input("Enter the default/start ELO value (1000 is a good number to go if you are not sure)!\n")
+    own_elo = input("Enter the default/start ELO value (1200 is a good number to go if you are not sure)!\n")
     k = 40
     Elo_Ranking_Calculator(int(own_elo), k, own_filename)
 
