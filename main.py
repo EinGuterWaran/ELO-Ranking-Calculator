@@ -29,8 +29,8 @@ def Elo_Ranking_Calculator(start_elo, k, filename):
   df = df.reset_index(drop=True)
   players = {}
   for index, row in df.iterrows():
-      player1 = row['player1']
-      player2 = row['player2']
+      player1 = str(row['player1'])
+      player2 = str(row['player2'])
       player1p = row['p1_points']
       player2p = row['p2_points']
       print("Match #" + str(index+1) + " - " + row['date'] + " - " + player1 +
