@@ -22,6 +22,8 @@ def new_ELO_points(old_points, k, s, e):
     new_points = round(old_points + k * (s - e))
     return new_points
 
+def rating_out_of_100(elo):
+    return round(0.00000332710696558113*elo**2+0.01451910649053150990*elo+20.72464295423197128025,2)
 
 def Elo_Ranking_Calculator(start_elo, k, filename):
   df = pd.read_csv('input/'+filename+'.csv', header=[0])
@@ -88,7 +90,7 @@ def Elo_Ranking_Calculator(start_elo, k, filename):
       act_player = players[len(players) - x]
       print("#" + str(x) + " " + act_player["name"] + " - " +
             str(act_player["points"]) + " - " + str(act_player["wins"]) + " - " +
-            str(act_player["ties"]) + " - " + str(act_player["losses"]) + " - " + str(round((0.020 * act_player["points"]) + (26.450),2)))
+            str(act_player["ties"]) + " - " + str(act_player["losses"]) + " - " + str(rating_out_of_100(act_player["points"])))
 
   with open('output/'+filename+'_ranking.csv', 'w', newline='') as csvfile:
       fieldnames = ['rank', 'name', 'elo', 'wins', 'losses', 'ties', 'rating_of_100']
@@ -103,7 +105,7 @@ def Elo_Ranking_Calculator(start_elo, k, filename):
               'wins': act_player["wins"],
               'losses': act_player["losses"],
               'ties': act_player["ties"],
-              'rating_of_100': round((0.020 * act_player["points"]) + (26.450),2)
+              'rating_of_100': rating_out_of_100(act_player["points"])
           })
 
 
