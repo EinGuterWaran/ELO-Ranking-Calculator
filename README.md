@@ -16,4 +16,4 @@ and if it's a tie give them both the same amount of points. The difference does 
 ### Example input files + randomly generated input file
 You find three example files in the input folder. One are German battle rap matches of BMCL from "Rap am Mittwoch", 
 [which can be found on Wikipedia](https://de.wikipedia.org/w/index.php?title=Rap_am_Mittwoch#Begegnungen_der_BMCL) and one are fantasy football games I made up.  
-The last one are 200000 randomly generated matches between 200 randomly generated players. The tool I wrote to generate them can also be found in this repository (*random_input_generator.py*).
+The other ones are 200000/1000000 randomly generated matches between 200/500 randomly generated players. The tool I wrote to generate them can also be found in this repository (*random_input_generator.py*).
