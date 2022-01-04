@@ -27,10 +27,8 @@ with open('input/' + filename + '.csv', 'w', encoding='UTF8') as f:
         player2 = random.randint(0, how_many_players - 1)
         while player2 == player1:
             player2 = random.randint(0, how_many_players - 1)
-        data = [
-            '01.01.2021', players[player1][0], players[player2][0],
-            players[player1][1], players[player2][1]
-        ]
+        data = ['01.01.2021', players[player1][0], players[player2][0],random.randint(int(players[player1][1]*0.83),int(players[player1][1]*1.17)), 
+              random.randint(int(players[player2][1]*0.83),int(players[player2][1]*1.17))]
         print(a + 1)
         writer.writerow(data)
     print(players)
